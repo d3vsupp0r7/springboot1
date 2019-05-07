@@ -20,10 +20,12 @@ C:\dev\apacheTools\kafka_2.12-2.2.0\bin\windows>kafka-console-consumer.bat --boo
 ##### Read only x message from a topic from beginning
 kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic sample-topic-read --from-beginning --max-messages 3
 
-@RequestParam
-http://localhost:8080/kafka?message=kafka
+## REST API
+### Publish a string message
+http://localhost:8080/kafka/publish/echo?message=simpleMessage
 
-**
+# Windows commands
+## List an open task on port an kill it
 netstat -ano | findstr :8080
 
 taskkill /PID 26236 /F
