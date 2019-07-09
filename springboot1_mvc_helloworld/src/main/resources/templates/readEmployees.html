@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Read employees</title>
+
+    <div th:replace="fragments/header :: header-css"/>
+
+</head>
+<body>
+
+<div th:replace="fragments/header :: header"/>
+
+<div class="container">
+
+<label>Hello <span th:text="#{welcome.message}"></span></label>
+
+    <div class="starter-template">
+       <br/><br/>
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Employee ID</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="employee : ${listEmployees}">
+                <td th:text="${employee.id}">Employee ID</td>
+                <td th:text="${employee.name}">Name</td>
+                <td th:text="${employee.surname}">Surname</td>
+                <td><a th:href="@{/employee-web/edit/{id}(id=${employee.id})}" class="btn btn-primary"><i class="fas fa-user-edit ml-2"></i>Edit</a></td>
+                <td><a th:href="@{/employee-web/delete/{id}(id=${employee.id})}" class="btn btn-primary"><i class="fas fa-user-times ml-2"></i>Delete</a></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+
+</div>
+<!-- /.container -->
+
+<div th:replace="fragments/footer :: footer"/>
+
+</body>
+</html>

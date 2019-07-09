@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring Boot Thymeleaf</title>
+
+    <div th:replace="fragments/header :: header-css"/>
+
+</head>
+<body>
+
+<div th:replace="fragments/header :: header"/>
+
+<div class="container">
+
+<label>Hello <span th:text="#{welcome.message}"></span></label>
+
+    <div class="starter-template">
+        <h1> <span th:text="#{home.application.title}"></span></h1>
+        <h2>1. Visit <a th:href="@{/employee-web/addEmployeeForm}"><span th:text="#{label.link.crud.employee.create}"></span></a></h2>
+        <h2>2. Visit <a th:href="@{/employee-web/readEmployees}"><span th:text="#{label.link.crud.employee.read}"></span></a></h2>
+        <h2>3. Visit <a th:href="@{/employee-web/updateEmployeeForm}"><span th:text="#{label.link.crud.employee.update}"></span></a></h2>
+   	    <h2>4. Visit <a th:href="@{/employee-web/deleteEmployeeForm}"><span th:text="#{label.link.crud.employee.delete}"></span></a></h2>
+    </div>
+
+</div>
+<!-- /.container -->
+
+<div th:replace="fragments/footer :: footer"/>
+
+</body>
+</html>

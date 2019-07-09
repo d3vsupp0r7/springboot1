@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spring Boot Validation - Add Employee - Form Example</title>
+<link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+<link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    
+     <link rel="stylesheet" th:href="@{/css/style.css}"
+              href="../css/style.css" />
+</head>
+<body>
+    <div class="login-form">
+        <form action="#" th:action="@{/employee-web/addExampleEmployee}" th:object="${employee}"
+            method="post">
+            <h2 class="text-center">Add employee</h2>
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user"></i></span> <input
+                        type="text" class="form-control" th:field="*{name}"
+                        placeholder="name" />
+
+                </div>
+                <span class="red" th:if="${#fields.hasErrors('name')}"
+                    th:errors="*{name}"></span>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user"></i></span> <input
+                        type="text" class="form-control" th:field="*{surname}"
+                        placeholder="Surname" />
+
+                </div>
+                <span class="red" th:if="${#fields.hasErrors('surname')}"
+                    th:errors="*{surname}"></span>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary login-btn btn-block">Add employee</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

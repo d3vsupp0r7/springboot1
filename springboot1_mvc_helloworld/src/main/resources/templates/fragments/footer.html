@@ -1,0 +1,28 @@
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+</head>
+<body>
+<div th:fragment="footer">
+
+    <div class="container">
+
+        <footer>
+        <!-- this is footer -->
+       Footer link: 
+            <span>
+                | <a th:href="@{/employee-web/addEmployeeForm}">Add employee</a> <span></span> |
+                  <a th:href="@{/employee-web/readEmployees}">List employees</a> <span></span> |
+                  <a th:href="@{/home}">home</a>
+            </span>
+
+        <script type="text/javascript"
+                src="webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+        </footer>
+    </div>
+
+</div>
+</body>
+</html>
