@@ -31,8 +31,8 @@
                 <td th:text="${employee.id}">Employee ID</td>
                 <td th:text="${employee.name}">Name</td>
                 <td th:text="${employee.surname}">Surname</td>
-                <td><a th:href="@{/employee-web/edit/{id}(id=${employee.id})}" class="btn btn-primary"><i class="fas fa-user-edit ml-2"></i>Edit</a></td>
-                <td><a th:href="@{/employee-web/delete/{id}(id=${employee.id})}" class="btn btn-primary"><i class="fas fa-user-times ml-2"></i>Delete</a></td>
+                <td><a th:href="@{/employee-web/updateEmployeeForm/{id}(id=${employee.id})}" class="btn btn-primary"><i class="fas fa-user-edit ml-2"></i>Edit</a></td>
+                <td><a th:href="@{/employee-web/deleteEmployeeForm/{id}(id=${employee.id})}" class="btn btn-primary"><i class="fas fa-user-times ml-2"></i>Delete</a></td>
             </tr>
         </tbody>
     </table>
