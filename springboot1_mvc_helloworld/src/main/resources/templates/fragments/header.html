@@ -8,22 +8,28 @@
 <body>
 	<div th:fragment="header">
 		<!-- this is header -->
-		<nav class="navbar navbar-inverse">
-			<div class="container">
+		<nav class="navbar navbar-expand-lg navbar-default">
+			<div class="container-fluid">
 				<div class="navbar-header">
+					<button type="button" class="navbar-toggler" data-toggle="collapse"
+						data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span> <span
+							class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
 					<a class="navbar-brand" th:href="@{/}">Spring Boot</a>
 				</div>
-				<div id="navbar" class="collapse navbar-collapse">
+				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
-						<li class="active"><a th:href="@{/}">Home</a></li>
+						<li class="nav-item active"><a class="nav-link"
+							th:href="@{/}">Home</a></li>
+						<li class="nav-item"><a class="nav-link"
+							th:href="@{/console}">H2 Web console</a></li>
 					</ul>
 				</div>
-				<div id="navbar" class="collapse navbar-collapse">
-					<ul class="nav navbar-nav">
-						<li class=""><a th:href="@{/console}">H2 Console</a></li>
-					</ul>
-				</div>
+				<!--/.nav-collapse -->
 			</div>
+			<!--/.container-fluid -->
 		</nav>
 	</div>
 
